@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%
+%% Оформление документа
+%%%%%%%%%%%%%%%%
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{fullpage,lipsum}
+
+% \RequirePackage[utf8x]{inputenc}
+\RequirePackage[russian]{babel}
+
+\RequirePackage[a4paper, margin=1in, %
+	top=1in, bottom=1.25in, headsep=0.3in]{geometry}
+
+\def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
+\def\theyear{1997}
+\def\theklas{100}
+
+
+
+%%%%%%%%%%%%%%%%
+%% Необходимые пакеты
+%%%%%%%%%%%%%%%%
+\RequirePackage{indentfirst,afterpage,ifthen,hyperref}
+\RequirePackage{pdfpages,float,fancyhdr}
+\RequirePackage{natbib,hyperref}
+\RequirePackage{mathtools,euscript,ulem}
+\RequirePackage{sistyle,lscape,rotating,longtable,multirow}
+\RequirePackage{enumerate,enumitem,array}
+\RequirePackage{listings,csquotes,setspace} 
+\RequirePackage{epsfig,tikz,eso-pic}
+\RequirePackage{graphicx,color,xcolor,colortbl,sidecap,caption}
+\RequirePackage[linesnumbered,ruled]{algorithm2e}
+
+
+
+%%%%%%%%%%%%%%%%
+%% Дополнительные параметры оригинального документа
+%%%%%%%%%%%%%%%%
+\setcounter{MaxMatrixCols}{20}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+\def\ms{\smallskip\par\noindent}
+\extrarowheight=3pt
+
+\def\itA{\item[\bf A.]}
+\def\itB{\item[\bf B.]}
+\def\itC{\item[\bf C.]}
+\def\itr{{\bfseries\itshape Решение:}\hspace{0.1in}}
+
+
+
+%%%%%%%%%%%%%%%%
+%% Колонтитулы
+%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0cm}
+
+\def\defaultstyle{
+	\fancyhead[CE]{\small Сборник задач олимпиады «Математика НОН-СТОП»}
+	\fancyhead[CO]{\small \theyear\ год,\ \ \theklas\ класс}
+	\fancyhead[RO,RE,LO,LE]{\ }
+		%%
+	\fancyfoot[CO,CE]{}
+	\fancyfoot[RE]{\small Вёрстка: Xe\LaTeX.}
+	\fancyfoot[LO]{\small Фонд «Время науки», 2018.}
+	\fancyfoot[RO]{|\ \ \ {\bf\thepage}} \fancyfoot[LE]{{\bf\thepage}\ \ \ |}
+}
+
+\def\emptystyle{
+	\fancyhead[RO,RE,CO,CE,LO,LE]{\ }
+	\fancyfoot[RO,RE,CO,CE,LO,LE]{\ }}
+
+\defaultstyle
+
+
+
+%%%%%%%%%%%%%%%%
+%% Секционирование
+%%%%%%%%%%%%%%%%
+\addto\captionsrussian{\renewcommand\chaptername{\!}}
+\addto\captionsenglish{\renewcommand\chaptername{\!}}
+
+\renewcommand{\thechapter}{\fontsize{21}{21}\selectfont
+	Задания \arabic{chapter} года}
+
+\def\chapyear#1{\renewcommand{\theyear}{#1}
+	\setcounter{chapter}{#1-1}
+	\chapter{ }
+	\vspace{-2.5cm}}
+
+\renewcommand{\thesection}{Задачи \arabic{section} класса}
+
+\def\secklas#1{\renewcommand{\theklas}{#1}
+	\setcounter{section}{#1-1}
+	\section{ }}
+
+\renewcommand*{\thesubsection}{Задача \arabic{subsection}}
+
+\def\task#1{\subsection{#1}}
+\def\taskno#1{\setcounter{subsection}{#1-1}
+	\subsection{\ }}
+
+
+
+%%%%%%%%%%%%%%%%
+%% НОД, НОК, операторы
+%%%%%%%%%%%%%%%%
+\renewcommand{\gcd}{\text{НОД}\,}
+\newcommand{\lcm}{\text{НОК}\,}
