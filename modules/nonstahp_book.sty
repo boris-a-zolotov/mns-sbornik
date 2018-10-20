@@ -44,6 +44,7 @@
 \def\itA{\item[\bf A.]}
 \def\itB{\item[\bf B.]}
 \def\itC{\item[\bf C.]}
+\def\itr{{\bfseries\itshape Решение:}\hspace{0.1in}}
 
 
 
@@ -95,4 +96,13 @@
 \renewcommand*{\thesubsection}{Задача \arabic{subsection}}
 
 \def\task#1{\subsection{#1}}
+\def\taskno#1{\setcounter{subsection}{#1-1}
+	\subsection{\ }}
 
+
+
+%%%%%%%%%%%%%%%%
+%% НОД, НОК, операторы
+%%%%%%%%%%%%%%%%
+\renewcommand{\gcd}{\text{НОД}\,}
+\newcommand{\lcm}{\text{НОК}\,}
