@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%
+%% Колонтитулы
+%%%%%%%%%%%%%%%%
+
+\def\thePTYMyear{1997}
+
+\def\ptymstyle{
+	\fancyhead[CO]{\small Сборник задач олимпиады «Математика НОН-СТОП»}
+	\fancyhead[CE]{\small Турнир юных математиков \thePTYMyear\ года}
+	\fancyhead[RO,RE,LO,LE]{\ }
+		%%
+	\fancyfoot[CO,CE]{}
+	\fancyfoot[RE]{\small Вёрстка: Xe\LaTeX.}
+	\fancyfoot[LO]{\small Фонд «Время науки», 2018.}
+	\fancyfoot[RO]{|\ \ \ {\bf\thepage}} \fancyfoot[LE]{{\bf\thepage}\ \ \ |}
+}
+
+\ptymstyle
+
+
+
+%%%%%%%%%%%%%%%%
+%% Заголовки секций
+%%%%%%%%%%%%%%%%
+
+\def\secyear#1{
+	\renewcommand{\thePTYMyear}{#1}
+	\addcontentsline{toc}{section}{\thePTYMyear\ год}
+	\section*{\Efs Задачи \thePTYMyear\ года}
+	\setcounter{subsection}{0}}
+
+
+%%%%%%%%%%%%%%%%
+%% Начало документа
+%%%%%%%%%%%%%%%%
+
+\addcontentsline{toc}{chapter}{\bf Задачи Петербургских турниров юных математиков}
+\chapter*{\TTfs Задачи \\ Петербургских турниров \\ юных математиков}
+\thispagestyle{empty}
