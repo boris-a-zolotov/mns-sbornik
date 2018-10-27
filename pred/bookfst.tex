@@ -1,0 +1,19 @@
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
+
+\maketitle
+
+\setcounter{page}{1}
+
+\addcontentsline{toc}{chapter}{\bf Предисловие}
+\chapter*{\TTfs Предисловие}\thispagestyle{empty}
+
+\input{pred/quote}
+\input{pred/chist}
+
+\tableofcontents\thispagestyle{empty}
+
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{0}
+
+\vfill\eject

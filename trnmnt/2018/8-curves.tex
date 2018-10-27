@@ -1,0 +1,60 @@
+\task{О приближении кривых}
+
+\def\dist{\mathrm{dist}\,} \def\ve{\varepsilon}
+
+\noindent Кривой на плоскости называется инъективное непрерывное отображение $\gamma \colon [a,b] \rightarrow {\mathbb R}^2$. Нас будут интересовать кривые из класса $\mathbf C^\infty$~--- те, для которых каждая из компонент отображения $\gamma(t) = (\gamma_1 (t), \gamma_2 (t))$ непрерывно дифференцируется бесконечное число раз.
+
+\medskip\par\noindent Пусть $\zeta, \gamma \colon [a,b] \longrightarrow {\mathbb R}^2$. Кривую $\zeta$ будем называть {\it $\varepsilon$--близкой} к кривой $\gamma$, если
+
+\vspace{-0.2cm}
+$$ \zeta(a) = \gamma(a),\ \ \zeta(b) = \gamma(b),\ \ 
+\forall\,t \in [a,b]\ \,\exists\,s \in [a,b] \colon
+\,\dist(\zeta(t), \gamma(s)) < \varepsilon.$$
+\vspace{-0.4cm}
+
+\medskip\par\noindent  Кривую $\zeta$ будем называть {\it $\varepsilon$--приближением} $\gamma$, если
+
+\vspace{-0.2cm}
+$$ \zeta(a) = \gamma(a),\ \ \zeta(b) = \gamma(b),\ \ 
+\forall\,t \in [a,b]\ \,\dist(\zeta(t), \gamma(t)) < \varepsilon.$$
+\vspace{-0.4cm}
+
+\medskip\par\noindent  Пусть $\gamma \colon [a,b] \rightarrow {\mathbb R}^2$~--- регулярная кривая. Её $\varepsilon$--длиной называется число
+
+\vspace{-0.2cm}
+$$L_\varepsilon (\gamma) =
+\inf \,\left\{
+	L(\zeta)  \mid  \text{$\zeta$~--- $\varepsilon$--приближение $\gamma$}
+\right\}.$$
+\vspace{-0.65cm}
+
+\begin{enumerate}
+\setcounter{enumi}{0}
+\item Докажите, что у регулярных кривых любой длины бывают сколь угодно длинные регулярные приближения. Иными словами, для любого числа $\EuScript D > 0$ и для любой регулярной кривой $\gamma$ существует регулярная кривая $\zeta \colon [0,1] \rightarrow {\mathbb R}^2$ с длиной $L(\zeta) > \EuScript D$, являющаяся её $\varepsilon$--приближением.
+
+\item Докажите, что для любой регулярной кривой $\gamma$ существует константа $\varepsilon_0$ такая, что при $\varepsilon < \varepsilon_0$ инфимум из определения $\varepsilon$--длины совпадает с инфимумами длин (а) кривых, $\varepsilon$--близких к $\gamma$; (б)  ломаных, $\varepsilon$--близких к $\gamma$. Укажите, как найти $\ve_0$.
+
+\item Пусть $\gamma$~--- регулярная кривая, про которую известно, что её кривизна ограничена сверху числом $\tfrac{1}{r}$. При $\varepsilon < \tfrac{r}{2}$ дайте как можно более точную нижнюю оценку на $L_\varepsilon (\gamma)$ (и проверьте, достигается ли она).
+
+\item Для регулярной кривой $\gamma$ докажите, что $\lim\limits_{\varepsilon \to 0}\,L_\varepsilon (\gamma) = L(\gamma)$. 
+Докажите то же самое для произвольной непрерывной кривой конечной длины.
+\end{enumerate}
+\vspace{-0.2cm}
+
+\medskip\par\noindent Перейдём от кривых к ломаным на плоскости. Пусть $\EuScript C_n$~--- множество несамопересекающихся ломаных с вершинами в точках множества $\tfrac{1}{n}\mathbb Z \times \tfrac{1}{n}\mathbb Z$ и рёбрами длины $\tfrac{1}{n}$. Несложно перенести определение $\varepsilon$--близости на случай ломаных~--- расстояние $\mathrm{dist}$ между двумя точками на плоскости нам теперь будет удобнее определить как
+
+\vspace{-0.2cm}
+$$\mathrm{dist}\,\Bigl((x,y),\,(z,t)\Bigr) = \,\max \{|x-z|,\, |t-y|\}\ \ \text{(проверьте, что это метрика).}$$
+\vspace{-0.4cm}
+
+\medskip\par\noindent Дана регулярная кривая $\gamma \colon [0,1] \rightarrow \mathbb R ^2$, причем $\gamma(0), \gamma(1) \in \mathbb Z \times \mathbb Z$. Ее $n$--пикселизацией (обозначим через $\gamma_n$) будем называть кратчайшую ломаную из $\EuScript C_n$, которая $1/n$--близка к $\gamma$. Обозначим $\EuScript P_n (\gamma) = L(\gamma_n)$.
+
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item Для данной ломаной $\lambda \in \EuScript C_1$ и чисел $n, \varepsilon \in \mathbb N$ как можно более точно оцените длину самой короткой и самой длинной ломаных из $\EuScript C_n$, $\varepsilon$--близких к $\lambda$ (и проверьте, достигаются ли ваши оценки).
+
+\item Для произвольной регулярной кривой $\gamma$ оцените $\EuScript P_n (\gamma)$ и найдите $\lim\limits_{n \to \infty} \EuScript P_n (\gamma)$.
+
+\item Предложите и исследуйте свои обобщения данной задачи: например, можно рассмотреть другие метрики и другие сетки допустимых вершин на плоскости.
+\end{enumerate}

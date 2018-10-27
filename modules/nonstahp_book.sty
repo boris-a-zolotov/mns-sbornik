@@ -4,12 +4,14 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{fullpage,lipsum}
 
-% \RequirePackage[utf8x]{inputenc}
 \RequirePackage[russian]{babel}
 
-\RequirePackage[a4paper, margin=1in, %
-	top=1in, bottom=1.25in, headsep=0.3in]{geometry}
+\RequirePackage[paperwidth=14.5cm, paperheight=22cm, %
+	margin=0.5in, headsep=2.5mm, %
+	top=0.55in, bottom=0.75in]{geometry}
 \linespread{1.12}
+
+\renewcommand*\labelenumi{\bf \theenumi .}
 
 \def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
 \def\theyear{1997}
@@ -23,13 +25,18 @@
 \RequirePackage{indentfirst,afterpage,ifthen,hyperref}
 \RequirePackage{pdfpages,float,fancyhdr}
 \RequirePackage{natbib,hyperref}
-\RequirePackage{mathtools,euscript,ulem}
+\RequirePackage{mathtools,euscript,ulem,stackrel}
 \RequirePackage{sistyle,lscape,rotating,longtable,multirow}
 \RequirePackage{enumerate,enumitem,array}
 \RequirePackage{listings,csquotes,setspace} 
-\RequirePackage{epsfig,tikz,eso-pic}
+\RequirePackage{epsfig,tikz,tikz-cd,eso-pic,pdfsync}
 \RequirePackage{graphicx,color,xcolor,colortbl,sidecap,caption}
 \RequirePackage[linesnumbered,ruled]{algorithm2e}
+
+\usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+\RequirePackage{tkz-graph}
+\RequirePackage{ytableau}
+\RequirePackage{youngtab}
 
 
 
@@ -56,6 +63,7 @@
 %%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0cm}
+\headheight=12pt \footskip=0.25in
 
 \def\defaultstyle{
 	\fancyhead[CO]{\small Сборник задач олимпиады «Математика НОН-СТОП»}
@@ -81,24 +89,27 @@
 %%%%%%%%%%%%%%%%
 \addto\captionsrussian{\renewcommand\chaptername{\!}}
 \addto\captionsenglish{\renewcommand\chaptername{\!}}
+\renewcommand{\thefigure}{\arabic{figure}}
 
-\renewcommand{\thechapter}{\fontsize{21}{21}\selectfont
-	Задания \arabic{chapter} года}
+\def\TTfs{\fontsize{22}{22}\selectfont}
+\def\Efs{\fontsize{18}{18}\selectfont}
+\def\Tfs{\fontsize{13}{13}\selectfont}
 
-\def\chapyear#1{\renewcommand{\theyear}{#1}
-	\setcounter{chapter}{#1-1}
-	\chapter{ }
-	\vspace{-2.5cm}}
+\def\chapyear#1{	
+	\renewcommand{\theyear}{#1}
+	\addcontentsline{toc}{chapter}{\bf Задачи \theyear\ года}
+	\chapter*{\TTfs Задачи \theyear\ года}
+	\thispagestyle{empty}}
 
-\renewcommand{\thesection}{Задачи \arabic{section} класса}
+\def\secklas#1{
+	\renewcommand{\theklas}{#1}
+	\addcontentsline{toc}{section}{\theklas\ класс}
+	\section*{\Efs Задачи \theklas\ класса}
+	\setcounter{subsection}{0}}
 
-\def\secklas#1{\renewcommand{\theklas}{#1}
-	\setcounter{section}{#1-1}
-	\section{ }}
+\renewcommand*{\thesubsection}{\Tfs Задача \arabic{subsection}.\!}
 
-\renewcommand*{\thesubsection}{Задача \arabic{subsection}}
-
-\def\task#1{\subsection{#1}}
+\def\task#1{\subsection{\Tfs #1}}
 \def\taskno#1{\setcounter{subsection}{#1-1}
 	\subsection{\ }}
 
