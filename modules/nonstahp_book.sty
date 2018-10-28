@@ -97,14 +97,26 @@
 
 \def\chapyear#1{	
 	\renewcommand{\theyear}{#1}
-	\addcontentsline{toc}{chapter}{\bf Задачи \theyear\ года}
+	\addcontentsline{toc}{chapter}{\bf Решения задач \theyear\ года}
 	\chapter*{\TTfs Задачи \theyear\ года}
+	\thispagestyle{empty}}
+
+\def\chapSTATyear#1{	
+	\renewcommand{\theyear}{#1}
+	\addcontentsline{toc}{chapter}{\bf Условия задач \theyear\ года}
+	\chapter*{\TTfs Условия задач \theyear\ года}
 	\thispagestyle{empty}}
 
 \def\secklas#1{
 	\renewcommand{\theklas}{#1}
 	\addcontentsline{toc}{section}{\theklas\ класс}
 	\section*{\Efs Задачи \theklas\ класса}
+	\setcounter{subsection}{0}}
+
+\def\secPROklas#1{
+	\renewcommand{\theklas}{#1}
+	\addcontentsline{toc}{section}{\theklas\ класс, профильный вариант}
+	\section*{\Efs Задачи профильного варианта \theklas\ класса}
 	\setcounter{subsection}{0}}
 
 \renewcommand*{\thesubsection}{\Tfs Задача \arabic{subsection}.\!}
