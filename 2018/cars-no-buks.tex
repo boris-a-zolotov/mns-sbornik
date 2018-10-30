@@ -6,7 +6,21 @@
 Тогда $R = 5 \sqrt{3}$ (отношения сторон прямоугольного треугольника с углом $60^\circ$~— известные величины).
 
 \begin{center}
-	\includegraphics[natwidth=4016,natheight=1392,width=6cm]{figures/2018-cars-no-buks}
+\tikz{
+  \draw (-5,0) -- (0,0) -- (0,3.5);
+  \draw (-0.4,0) -- (-0.4,0.4) -- (0,0.4);
+  \draw[rotate around={30:(0,2.5)}] (-5.5,2.5) -- (0.5,2.5) -- (0,2.5) -- (0,3.5);
+  \filldraw[fill=black] (-0.1,-0.3) rectangle (0.1,0.3);
+  \filldraw[fill=black, rotate around={30:(0,2.5)}] (-0.1,2.2) rectangle (0.1,2.8);
+  \draw[double,very thick] (0,2) arc (-90:-150:0.5cm);
+  \draw[very thick] (0,3) arc (90:120:0.5cm);
+  \draw (-0.5,1.7) node {$60^\circ$};
+  \draw (-0.6,2.8) node {$30^\circ$};
+  \draw (0.4, 1.1) node {\SI{5}{\text{м}}};
+  \draw (-2.3,-0.4) node {$R$};
+}
+
+%	\includegraphics[natwidth=4016,natheight=1392,width=6cm]{figures/2018-cars-no-buks}
 \end{center}
 
 \itB Теперь нас интересует высота прямоугольного равнобедренного треугольника с основанием \SI{1.8}{\text{м}}. Она равна \SI{0.9}{\text{м}}. То есть, погрузчик ездит вокруг точки, расположенной на \SI{0.9}{\text{м}} левее, чем середина его левого борта.
