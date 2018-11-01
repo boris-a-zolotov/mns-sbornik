@@ -1,4 +1,4 @@
-\renewcommand{\thepage}{\roman{page}}
+\renewcommand{\thepage}{\Roman{page}}
 \setcounter{page}{1}
 
 \maketitle
@@ -11,6 +11,9 @@
 \input{pred/quote}
 \input{pred/chist}
 
+\vfill\eject
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
 \tableofcontents\thispagestyle{empty}
 
 \renewcommand{\thepage}{\arabic{page}}
