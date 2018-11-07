@@ -4,20 +4,26 @@
 \usepackage[russian]{babel}
 \usepackage{hyperref}
 \usepackage{forloop}
-\usepackage[margin=1 cm]{geometry}
+\usepackage[margin=1 cm,landscape]{geometry}
 
 \begin{document}
+\pagestyle{empty}
 
 \newcounter{number}
 
+\begin{center}
 \begin{tabular}{l|l|l|l|l}
 № & Фамилия, Имя, Отчество & Школа & Должность & Классы преподавания \\\hline
 
-    \forloop{number}{1}{\value{number}<18}{
-         & \phantom{Константин Константинович Конст.}& \phantom{СОШ 239}&\phantom{учитель мат-ки}&\\\arabic{number}. & & &&\\\phantom{x} & & & &\\
+    \forloop{number}{1}{\value{number}<13}{
+         & \phantom{Константин ибн-Константинович Константинов}
+         & \phantom{ЧОУ ОиДО НЦ ЛНМО}
+         & \phantom{преподаватель мат. анализа}
+         & \\ \arabic{number}. & & &&\\\phantom{x} & & & &\\
 	\hline
     } 
     \phantom{x} & & &
 \end{tabular}
+\end{center}
 
 \end{document}
