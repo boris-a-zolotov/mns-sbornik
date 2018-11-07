@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%%
+%% Оформление документа
+%%%%%%%%%%%%%%%%
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{fullpage,lipsum}
+
+\RequirePackage[russian]{babel}
+
+\RequirePackage[paperwidth=14.5cm, paperheight=22cm, %
+	margin=0.5in, headsep=2.5mm, %
+	top=0.55in, bottom=0.75in]{geometry}
+\linespread{1.12}
+
+\renewcommand*\labelenumi{\bfseries \theenumi .}
+
+\def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
+\def\theyear{1997}
+\def\theklas{100}
+\newcommand{\divsby}{\mathop{\vdots}}
+
+\def\mov#1#2{\begin{scope}[xshift = #1 cm] #2 \end{scope};}
+
+%%%%%%%%%%%%%%%%
+%% Необходимые пакеты
+%%%%%%%%%%%%%%%%
+\RequirePackage{indentfirst,afterpage,ifthen,hyperref}
+\RequirePackage{pdfpages,float,fancyhdr,multicol}
+\RequirePackage{natbib,hyperref}
+\RequirePackage{mathtools,euscript,ulem,stackrel}
+\RequirePackage{sistyle,lscape,rotating,longtable,multirow}
+\RequirePackage{enumerate,enumitem,array}
+\RequirePackage{listings,csquotes,setspace} 
+\RequirePackage{epsfig,tikz,tikz-cd,eso-pic,pdfsync}
+\RequirePackage{graphicx,color,xcolor,colortbl,sidecap,caption}
+\RequirePackage[linesnumbered,ruled]{algorithm2e}
+
+\usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+\RequirePackage{tkz-graph}
+\RequirePackage{ytableau}
+\RequirePackage{youngtab}
+
+
+
+%%%%%%%%%%%%%%%%
+%% Дополнительные параметры оригинального документа
+%%%%%%%%%%%%%%%%
+\setcounter{MaxMatrixCols}{20}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+\def\ms{\smallskip\par\noindent}
+\extrarowheight=3pt
+
+\def\itA{\item[\bfseries A.]}
+\def\itB{\item[\bfseries B.]}
+\def\itC{\item[\bfseries C.]}
+\def\itr{{\bfseries\itshape Решение:}\hspace{0.1in}}
+
+\def\ll{\left(} \def\rr{\right)}
+\def\lookPrev#1#2{\noindent Смотреть задачу #2 варианта #1 класса.}
+
+
+
+%%%%%%%%%%%%%%%%
+%% Колонтитулы
+%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0cm}
+\headheight=12pt \footskip=0.25in
+
+\def\defaultstyle{
+	\fancyhead[CO]{\small Сборник задач олимпиады «Математика НОН-СТОП»}
+	\fancyhead[CE]{\small \theyear\ год,\ \ \theklas\ класс}
+	\fancyhead[RO,RE,LO,LE]{\ }
+		%%
+	\fancyfoot[CO,CE]{}
+	\fancyfoot[RE]{\small Вёрстка: Xe\LaTeX.}
+	\fancyfoot[LO]{\small Фонд «Время науки», 2018.}
+	\fancyfoot[RO]{|\ \ \ {\bfseries\thepage}} \fancyfoot[LE]{{\bfseries\thepage}\ \ \ |}
+}
+
+\def\emptystyle{
+	\fancyhead[RO,RE,CO,CE,LO,LE]{\ }
+	\fancyfoot[RO,RE,CO,CE,LO,LE]{\ }}
+
+\defaultstyle
+
+
+
+%%%%%%%%%%%%%%%%
+%% Секционирование
+%%%%%%%%%%%%%%%%
+\addto\captionsrussian{\renewcommand\chaptername{\!}}
+\addto\captionsenglish{\renewcommand\chaptername{\!}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+\def\TTfs{\fontsize{22}{22}\selectfont}
+\def\Efs{\fontsize{18}{18}\selectfont}
+\def\Tfs{\fontsize{13}{13}\selectfont}
+
+\def\chapyear#1{	
+	\renewcommand{\theyear}{#1}
+	\addcontentsline{toc}{chapter}{\bfseries Решения задач \theyear\ года}
+	\chapter*{\TTfs Задачи \theyear\ года}
+	\thispagestyle{empty}}
+
+\def\chapSTATyear#1{	
+	\renewcommand{\theyear}{#1}
+	\addcontentsline{toc}{chapter}{\bfseries Условия задач \theyear\ года}
+	\chapter*{\TTfs Условия задач \theyear\ года}
+	\thispagestyle{empty}}
+
+\def\secklas#1{
+	\renewcommand{\theklas}{#1}
+	\addcontentsline{toc}{section}{\theklas\ класс}
+	\section*{\Efs Задачи \theklas\ класса}
+	\setcounter{subsection}{0}}
+
+\def\secPROklas#1{
+	\renewcommand{\theklas}{#1}
+	\addcontentsline{toc}{section}{\theklas\ класс, профильный вариант}
+	\section*{\Efs Задачи профильного варианта \theklas\ класса}
+	\setcounter{subsection}{0}}
+
+\renewcommand*{\thesubsection}{\Tfs Задача \arabic{subsection}.\!}
+
+\def\task#1{\subsection{\Tfs #1}}
+\def\taskno#1{\setcounter{subsection}{#1-1}
+	\subsection{\ }}
+
+
+
+%%%%%%%%%%%%%%%%
+%% НОД, НОК, операторы
+%%%%%%%%%%%%%%%%
+\renewcommand{\gcd}{\text{НОД}\,}
+\newcommand{\lcm}{\text{НОК}\,}

@@ -3,7 +3,23 @@
 \itA «Расправим» большую окружность — заметим, что дуга, составляющая её половину, равна по длине окружности круга, который мы катим. Это значит, что, проехав эту дугу, круг снова коснётся её отмеченной точкой.
 
 \begin{center}
-	\includegraphics[natwidth=2614,natheight=1716,width=6cm]{figures/2018-circle-move}
+	\tikz{
+		\draw (0,-2) arc (-90:195:2)
+			node[circle,fill,inner sep=0.4mm,label=below:{ }](c){}
+			arc (195:270:2);
+		\draw (0,-2) node[circle,fill,inner sep=0.4mm,label=below:$P$](){};
+		\draw (0,2) node[circle,fill,inner sep=0.4mm,label=below:$M$](){};
+		\begin{scope}[rotate=75]
+			\draw (0,-2) arc (-90:120:1)
+				node[circle,fill,inner sep=0.4mm,label=below:{ }](a){}
+				arc (120:270:1);
+			\draw (0,-2) node[circle,fill,inner sep=0.4mm,label=below:{ }](b){};
+		\end{scope}
+		\draw[thick] (c) -- ++(-1,0) -- (a) -- (b) -- ++(1,0);
+		\draw (1,-1.92) node {$x$};
+		\draw (-1,-1.92) node {$x$};
+		\draw (1,-1.15) node {$x$};
+	}
 \end{center}
 
 \itB Длина дуги круга между точкой его касания с окружностью и отмеченной точкой равна длине дуги окружности между точкой её касания с кругом и точкой $P$. Обозначим эту длину через $x$. Отложим дугу длиной $x$ налево от точки $P$ (смотреть рисунок). Отрезок, соединяющий точку касания круга с окружностью и конец новой дуги, будет горизонтальным.
