@@ -1,0 +1,23 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\usepackage{forloop}
+\usepackage[margin=1 cm]{geometry}
+
+\begin{document}
+
+\newcounter{number}
+
+\begin{tabular}{l|l|l|l|l}
+№ & Фамилия, Имя, Отчество & Школа & Должность & Классы преподавания \\\hline
+
+    \forloop{number}{1}{\value{number}<18}{
+         & \phantom{Константин Константинович Конст.}& \phantom{СОШ 239}&\phantom{учитель мат-ки}&\\\arabic{number}. & & &&\\\phantom{x} & & & &\\
+	\hline
+    } 
+    \phantom{x} & & &
+\end{tabular}
+
+\end{document}
