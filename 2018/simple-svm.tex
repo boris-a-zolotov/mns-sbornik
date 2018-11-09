@@ -5,9 +5,20 @@
 
 Для этого соединим центры кругов отрезком и построим касательные к кругам в в точках пересечения отрезка с их границей. Они будут параллельны и образуют полосу максимально допустимой ширины (смотреть рисунок).
 
-\begin{center}
-	\includegraphics[natwidth=3441,natheight=2736,width=6cm]{figures/2018-simple-svm}
-\end{center}
+\definecolor{lghtgryq}{RGB}{205,205,205}
+
+\begin{center} \tikz{
+\begin{scope}[rotate=55]
+	\filldraw[draw=white,fill=lghtgryq] (-2.45,-0.9) rectangle (2.45,0.9);
+	\foreach \y / \m in {0.9 / 1, -0.9 / -1} {
+		\draw[thick] (-2.7,\y) -- (2.7,\y);
+		\draw[thick] (0, \y) arc (-90*\m:270*\m:0.75);
+		\draw[thick,dashed] (0, \y cm + \m*0.75 cm) -- (0, \y cm);
+	}
+	\draw[thick,densely dotted] (0,0.9) -- (0,-0.9);
+	\draw (0,0.6) -- (0.3,0.6) -- (0.3,0.9);
+\end{scope}
+} \end{center}
 
 \item[\bfseries B.–C.] Сработает похожий метод: надо найти ближайшие друг к другу точки квадратов и соединить их отрезком — искомая полоса получится, если провести к данному отрезку перпендикуляры в его концах.
 
