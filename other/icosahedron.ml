@@ -70,6 +70,11 @@ let draw verts (color_inv, color_vis) =
   set_color color_inv; iter line inv;
   set_color color_vis; iter line vis;;
 
+let rec uniq l = match l with
+  l1::l2::ls when l1=l2 -> uniq (l2::ls)
+ |l1::ls -> l1::uniq ls
+ |[] -> [];;
+
 let p_line (b1::b2::_,e1::e2::_) = 
   Printf.printf "\\draw (%f,%f) -- (%f,%f);\n" b1 b2 e1 e2;;
 
@@ -79,11 +84,14 @@ let rec main_loop x y z =
     read_key ();
 
     let verts = map (rotate x y z) vertices in    
-    let (inv, vis) = conv faces verts >> partition_invisible verts in
+    let (inv,vis) = conv faces verts >> partition_invisible verts in
+    let w = List.sort compare (List.map (fun (a,b) -> (min a b, max a b)) (inv @ vis)) >> uniq in
+(*
     print_string "inv\n";
     iter p_line inv;
+*)
     print_string "vis\n";
-    iter p_line vis
+    iter p_line w
   )
   else (
     let verts = map (rotate x y z) vertices in
