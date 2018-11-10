@@ -32,6 +32,7 @@
 \RequirePackage{listings,csquotes,setspace} 
 \RequirePackage{epsfig,tikz,tikz-cd,eso-pic,pdfsync}
 \RequirePackage{graphicx,color,xcolor,colortbl,sidecap,caption}
+\RequirePackage{pst-platon}
 \RequirePackage[linesnumbered,ruled]{algorithm2e}
 
 \usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
@@ -75,10 +76,7 @@
 	\fancyhead[CE]{\small \theyear\ год,\ \ \theklas\ класс}
 	\fancyhead[RO,RE,LO,LE]{\ }
 		%%
-	\fancyfoot[CO,CE]{}
-	\fancyfoot[RE]{\small Вёрстка: Xe\LaTeX.}
-	\fancyfoot[LO]{\small Фонд «Время науки», 2018.}
-	\fancyfoot[RO]{|\ \ \ {\bfseries\thepage}} \fancyfoot[LE]{{\bfseries\thepage}\ \ \ |}
+	\fancyfoot[CO,CE]{−\ \ \ {\bfseries\thepage}\ \ \ −}
 }
 
 \def\emptystyle{
