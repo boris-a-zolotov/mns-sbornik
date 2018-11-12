@@ -16,4 +16,4 @@ main = do
    print $ take 20 primes
    print $ divisors 5 primes
 
-   print $ [(k,nearest k,divisors (nearest k) primes)| k <- [1..300]]
+   print $ [(k,nearest k,divisors (nearest k) primes)| k <- [1..10]]
