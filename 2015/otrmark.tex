@@ -1,0 +1,53 @@
+	\def\distabove#1{node[above,rectangle,fill=white]{\scriptsize \SI{#1}{\text{см}}}}
+	\def\otrmark{node[fill=black,rectangle,xscale=0.225,inner sep=1mm]{}}
+	
+	\begin{center} \tikz{
+	\begin{scope}[scale=0.78]
+		\foreach \x in {0,2,5,8,9} {
+			\draw[thick,dashed,color=gray] (\x,0.6) -- (\x,-4.6);}
+		\dwt
+			(0,0.2) \otrmark
+				-- (1,0.2) \distabove{2}
+			-- (2,0.2) \otrmark
+				-- (3.5,0.2) \distabove{3}
+			-- (5,0.2) \otrmark
+				-- (6.5,0.2) \distabove{3}
+			-- (8,0.2) \otrmark
+				-- (8.5,0.2) \distabove{1}
+			-- (9,0.2) \otrmark;
+		\dwt
+			(8,-0.6) \otrmark
+				-- (8.5,-0.6) \distabove{1}
+			-- (9,-0.6) \otrmark;
+		\dwt
+			(0,-0.6) \otrmark
+				-- (1,-0.6) \distabove{2}
+			-- (2,-0.6) \otrmark;
+		\dwt
+			(2,-1.2) \otrmark
+				-- (3.5,-1.2) \distabove{3}
+			-- (5,-1.2) \otrmark
+				-- (7,-1.2) \distabove{4}
+			-- (9,-1.2) \otrmark;
+		\dwt
+			(0,-1.8) \otrmark
+				-- (2.5,-1.8) \distabove{5}
+			-- (5,-1.8) \otrmark;
+		\dwt
+			(2,-2.4) \otrmark
+				-- (5,-2.4) \distabove{6}
+			-- (8,-2.4) \otrmark;
+		\dwt
+			(2,-3) \otrmark
+				-- (5.5,-3) \distabove{7}
+			-- (9,-3) \otrmark;
+		\dwt
+			(0,-3.6) \otrmark
+				-- (4,-3.6) \distabove{8}
+			-- (8,-3.6) \otrmark;
+		\dwt
+			(0,-4.2) \otrmark
+				-- (4.5,-4.2) \distabove{9}
+			-- (9,-4.2) \otrmark;
+	\end{scope}
+	} \end{center}
