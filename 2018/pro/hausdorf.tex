@@ -2,9 +2,6 @@
 \def\dist{\mathrm{dist}\,} \def\l#1{\limits_{#1}}
 \def\Dist{\mathrm{DIST}\,}
 
-\def\Dfst{\mathrm{DIST}_1\,}
-\def\Dsnd{\mathrm{DIST}_2\,}
-
 \begin{enumerate}
 
 \item Несложно убедиться в том, что $\max\,\min$ равен 1 (вершина квадрата, ближайшая к данной, всегда находится на расстоянии 1 от неё). С другой стороны, $\min\,\max$ равен $\sqrt{2}$: дальняя вершина от данной находится «по диагонали», на рассоянии $\sqrt{2}$.
@@ -39,26 +36,60 @@ $$\max\l{x\in A}\ F(x) = \max\l{x \in A}\ 0 = 0,$$
 
 \begin{enumerate}
 	\item[\bfseries d=0\,:] Если два множества совпадают, то DIST равен нулю: это доказано в пункте 6. Если множества не равны — $A \ne B$ — то найдётся точка, скажем $a \in A$, которая не лежит в $B$. Для неё $\min_{y \in B}\ \dist(a,y) >0$ — значит, и DIST, получаемый взятием максимума из этой величины и каких-то других величин, будет строго больше нуля.
-	\item[\bfseries d(a,b) + ...\,:] Введём
+	
+	\item[\bfseries (a,b)=(b,a)\,:] Симметричность введённого нами расстояния очевидна, потому что при замене в формуле для него $A$ на $B$ и $B$ на $A$ формула остаётся дословно такой же.
+	
+	\item[\bfseries d(a,b) + ...\,:] Определим
 	\begin{align*}
-		& \Dfst(A,B) := \max\l{x \in A}\ \ll\min\l{y \in B}\ \dist (x,y)\rr \\
-		& \Dsnd(A,B) := \Dfst (B,A)
-			\vphantom{\min\l{y \in B}}\\
-		& \Dist(A,B) = \max\,\ll\Dfst(A,B), \Dsnd(A,B)\rr
+		& D(A,B) := \max\l{x \in A}\ \ll\min\l{y \in B}\ \dist (x,y)\rr. \\
+		\text{Тогда\quad} & \Dist(A,B) = \max \left\{ D(A,B), D(B,A) \right\}.
+	\end{align*}
+	
+	Шаг первый: $D(A,C) \le D(A,B) + D(B,C)$.
+	\begin{align*}
+		& D(A,C) = \max\l{x \in A}\ \ll \min\l{z \in C}\ \dist (x,z) \rr. \\
+	\end{align*}
+	
+	Нам нужно доказать, что этот максимум не превосходит выражения в правой части. Для этого надо доказать, что для любого элемента $a_0 \in A$, взятого произвольным образом, максимизируемая величина не превосходит правой части. Итак,
+	\begin{align*}
+		& \min\l{z \in C}\ \dist(a_0, z) \le \\
+		& \text{\scriptsize Пусть $b_0$ — точка из $B$, ближайшая к $a_0$.} \\
+		\le\ & \min\l{z \in C}\ \Bigl( \dist(a_0, b_0) + \dist (b_0, z) \Bigr) = \\
+		=\ & \min\l{z \in C}\ \Bigl( \min\l{y \in B}\ \dist(a_0, y) + \dist (b_0, z) \Bigr) = \\ 
+		=\ & \min\l{y \in B}\ \dist(a_0, y) + \min\l{z \in C}\ \dist (b_0, z) \le \\
+		\le\ & \max\l{x \in A}\ \ll \min\l{y \in B}\ \dist(x, y) \rr +
+			\max\l{y \in B}\ \ll \min\l{z \in C}\ \dist(y, z) \rr = \\
+		& \\
+		& \qquad\qquad = D(A,B) + D(B,C). 
 	\end{align*}
 
-Согласно пункту 7, $\Dfst (A,B)$ — наибольший радиус окрестности множества $B$, в которой лежит множество $A$.
+	Шаг второй: $D(C,A) \le D(C,B) + D(B,A)$. Получается заменой в формулах выше $A$ на $C$ и наоборот. Таким образом,
+	\begin{align*}
+		& \Dist (A,C) = \max\left\{ D(A,C),\ D(C,A) \right\} \le \\
+		\le\ & \max \Bigl\{ D(A,B)+D(B,C),\ \ D(C,B)+D(B,A) \Bigr\}.
+	\end{align*}
+	
+	Предыдущее верно, потому что при переходе от первой строчки ко второй мы не уменьшили каждую из двух величин в скобках.
+	
+	Наконец, $\max\{ p+q, u+v \} \le \max\{ p, u \} + \max\{ q, v \}$:
+	\begin{align*}
+		& \max\{ p+q, u+v \} = \\
+		=\ & \frac{1}{2} \Bigl( p+q+u+v + \left| p+q-u-v \right| \Bigr) \le \\
+		\le\ & \frac{1}{2} \Bigl( p+u + |p-u| + q+v + |q-v| \Bigr) = \\
+		=\ & \max\{ p, u \} + \max\{ q, v \}.
+	\end{align*}
+	
+	Отсюда
+	\begin{align*}
+		& \Dist (A,C) \le \\
+		\le\ & \max \Bigl\{ D(A,B)+D(B,C),\ \ D(C,B)+D(B,A) \Bigr\} \le \\
+		\le\ & \max \Bigl\{ D(A,B),\ D(B,A) \Bigr\}
+			+ \max \Bigl\{ D(B,C),\ D(C,B) \Bigr\} = \\
+		=\ & \Dist(A,B) + \Dist(B,C).
+	\end{align*}
+	
+	Что и требовалось доказать.
 
-Тогда $\Dfst (A,B)$ $+$ $\Dfst (B,C)$ $\le$ $\Dfst(A,C)$ на основании пункта 5. То же самое верно для $\Dsnd$. Теперь
-\begin{align*}
-	\Dist(A,B) & + \Dist(B,C) = \\
-	=& \max\,\ll\Dfst(A,B), \Dsnd(A,B) \rr + \\
-	&+ \max\,\ll\Dfst(B,C), \Dsnd(B,C) \rr \ge \\
-	& \text{\footnotesize ($\max(a,b) + \max(c,d) \ge \max(a+b,c+d)$)} \\
-	\ge \max & \Bigl( \Dfst(A,B) + \Dfst(B,C),\\
-		& \Dsnd(A,B) + \Dsnd(B,C)\Bigr) \ge \\
-	\ge \max & \Bigl( \Dfst(A,C), \Dsnd(A,C) \Bigr) = \Dist(A,C).
-\end{align*}
 \end{enumerate}
 
 \item Если $A$ и $B$ — подмножества одного круга радиуса $R$, то расстояния между любыми двумя их точками вообще не превосходят $2R$. Как операции $\max$ и $\min$ к ним ни применяй, всегда будет получаться величина, не превосходящая $2R$.
