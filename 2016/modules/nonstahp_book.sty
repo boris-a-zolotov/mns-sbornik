@@ -16,14 +16,16 @@
 \def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
 \def\theyear{1997}
 \def\theklas{100}
+\def\divsby{\mathop{\rlap{.}\rlap{\raisebox{0.55ex}{.}}\raisebox{1.1ex}{.}}}
 
-
+\def\mov#1#2{\begin{scope}[xshift = #1 cm] #2 \end{scope};}
+\def\dwt{\draw[very thick]}
 
 %%%%%%%%%%%%%%%%
 %% Необходимые пакеты
 %%%%%%%%%%%%%%%%
 \RequirePackage{indentfirst,afterpage,ifthen,hyperref}
-\RequirePackage{pdfpages,float,fancyhdr}
+\RequirePackage{pdfpages,float,fancyhdr,multicol}
 \RequirePackage{natbib,hyperref}
 \RequirePackage{mathtools,euscript,ulem,stackrel}
 \RequirePackage{sistyle,lscape,rotating,longtable,multirow}
@@ -31,6 +33,7 @@
 \RequirePackage{listings,csquotes,setspace} 
 \RequirePackage{epsfig,tikz,tikz-cd,eso-pic,pdfsync}
 \RequirePackage{graphicx,color,xcolor,colortbl,sidecap,caption}
+\RequirePackage{pst-platon}
 \RequirePackage[linesnumbered,ruled]{algorithm2e}
 
 \usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
@@ -74,10 +77,7 @@
 	\fancyhead[CE]{\small \theyear\ год,\ \ \theklas\ класс}
 	\fancyhead[RO,RE,LO,LE]{\ }
 		%%
-	\fancyfoot[CO,CE]{}
-	\fancyfoot[RE]{\small Вёрстка: Xe\LaTeX.}
-	\fancyfoot[LO]{\small Фонд «Время науки», 2018.}
-	\fancyfoot[RO]{|\ \ \ {\bfseries\thepage}} \fancyfoot[LE]{{\bfseries\thepage}\ \ \ |}
+	\fancyfoot[CO,CE]{−\ \ \ {\bfseries\thepage}\ \ \ −}
 }
 
 \def\emptystyle{
