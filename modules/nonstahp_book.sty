@@ -26,7 +26,7 @@
 %%%%%%%%%%%%%%%%
 \RequirePackage{indentfirst,afterpage,ifthen,hyperref}
 \RequirePackage{pdfpages,float,fancyhdr,multicol}
-\RequirePackage{natbib,hyperref}
+\RequirePackage{natbib,hyperref,makecell}
 \RequirePackage{mathtools,euscript,ulem,stackrel}
 \RequirePackage{sistyle,lscape,rotating,longtable,multirow}
 \RequirePackage{enumerate,enumitem,array}
@@ -52,8 +52,10 @@
 \setcounter{MaxMatrixCols}{20}
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{1}
-\def\ms{\smallskip\par\noindent}
 \extrarowheight=3pt
+
+\def\ms{\smallskip\par\noindent}
+\def\abz{\hspace{0.9cm}} \def\aabz{\ms\abz}
 
 \def\itA{\item[\bfseries A.]}
 \def\itB{\item[\bfseries B.]}
