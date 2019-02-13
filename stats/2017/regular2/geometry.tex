@@ -3,15 +3,26 @@
 
 \itA Разрежьте тупоугольный треугольник ниже на семь остроугольных треугольников. Прямоугольный треугольник не считается остро-\linebreak угольным.
 
-\begin{center}
-	\includegraphics[width=3.6cm]{stats/2017/images/z_obtuse.png}
-\end{center}
+\smallskip
+\begin{center} \tikz{ \begin{scope}[scale=0.75]
+	\draw[thick] (2.063,0.411) -- (0.237,3.564) -- (5.696,0.411) -- cycle;
+\end{scope} } \end{center}
 
 \itB Дан квадрат со стороной \SI{1}{\text{см}}. Покажите, как разрезать его на остроугольные треугольники.
 
 \itC Докажите, что сумма величин углов $A$ и $B$ на рисунке равна величине угла $C$.
 
-\begin{center}
-	\includegraphics[width=8cm]{stats/2017/images/z_threesquares.png}
-\end{center}
+\smallskip
+\begin{center} \tikz{
+	\draw[thick] (0,0) rectangle (7.5,2.5);
+	\draw[thick] (2.5,0) -- (2.5,2.5);
+	\draw[thick] (5,0) -- (5,2.5);
+	\draw[thick] (0,0) -- (7.5,2.5);
+	\draw[thick] (2.5,0) -- (7.5,2.5);
+	\draw[thick] (5,0) -- (7.5,2.5);
+	\draw (1.2,-0.05) node[above]{$A$};
+	\draw (3.4,-0.05) node[above]{$B$};
+	\draw (5.6,-0.05) node[above]{$C$};
+} \end{center}
+
 \end{itemize}
