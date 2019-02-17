@@ -10,23 +10,19 @@
 
 Зная это, придумать замощение несложно:
 
-\def\hsp{\ \hspace{0.7cm}}
-\def\bcel{\multicolumn{1}{|c|}{$\cdot$}}
-\def\lcel{\multicolumn{1}{|c}{$\cdot$}}
-\def\rcel{\multicolumn{1}{c|}{$\cdot$}}
-\def\cel{\multicolumn{1}{c}{$\cdot$}}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-	\bcel & \cel & \cel & \cel & \lcel & \cel & \rcel \\
-	\bcel & \cel & \cel & \cel & \lcel & \cel & \rcel \\ \cline{2-7}
-	\bcel & \cel & \cel & \lcel & \cel & \lcel & \bcel \\
-	\bcel & \cel & \cel & \lcel & \cel & \lcel & \bcel \\
-	\bcel & \cel & \cel & \lcel & \cel & \lcel & \bcel \\ \cline{1-5}
-	\lcel & \cel & \cel & \cel & \cel & \lcel & \bcel \\ \cline{1-5}
-	\lcel & \cel & \cel & \cel & \cel & \lcel & \bcel \\ \hline
-\end{tabular}
-\end{center}
+	\medskip
+	\begin{center} \tikz{
+		\draw[thick] (0,0) rectangle (2.5,0.5);
+		\draw[thick] (0,0.5) rectangle (0.5,3);
+		\draw[thick] (0.5,0.5) rectangle (1,3);
+		\draw[thick] (0,3) rectangle (2.5,3.5);
+		\draw[thick] (1,1.5) rectangle (3.5,2);
+		
+		\draw[thick] (2.5,0) rectangle (3.5,1.5);
+		\draw[thick] (2.5,2) rectangle (3.5,3.5);
+		\draw[thick] (1,0.5) rectangle (2.5,1.5);
+		\draw[thick] (1,2) rectangle (2.5,3);
+	} \end{center}
 
 \itC У Карлсона было 20 банок варенья. Он расставил их на трех полках так, что на каждой полке стояло одинаковое количество литров варенья. На первую полку Карлсон поставил одну большую и четыре средних банки варенья, на вторую — две большие и шесть литровых банок, на третью — одну большую, три средних и три литровых банки. Сколько литров варенья было у Карлсона?
 
@@ -58,9 +54,9 @@ $$77192329,$$
 а наименьшее —
 
 \vspace{-0.4cm}
-$$11111232.$$
+$$11111229.$$
 
-Их разность равна 66081097.
+Их разность равна 66081100.
 
 \end{itemize}
 
