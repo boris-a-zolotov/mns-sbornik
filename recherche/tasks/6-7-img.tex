@@ -1,40 +1,40 @@
-\task{Геометрическая миниатюра}
+﻿\task{Геометрическая миниатюра}
 
 \begin{itemize}
 \item Как вы думаете, какую часть (по площади) составляет треугольник внутри прямоугольника на картинке ниже?
 
 \begin{center} \tikz{
-	\draw[very thick] (-2.5,-1.1) -- (-2.5,1.1) -- (2.5,1.1) -- (2.5,-1.1) -- cycle;
-	\filldraw[thick,draw=black,fill={rgb:black,1.4;white,8.6}]
-		(-2.5,-1.1) -- (-1.4,1.1) -- (2.5,-1.1) -- cycle;
+	\draw[very thick] (-2.5,-1.1) -- (-2.5,1.1) -- (2.5,1.1) -- (2.5,-1.1) -- cycle; 
+	\filldraw[thick,draw=black,fill={rgb:black,1.4; white,8.6}]
+		(-2.5,-1.1) -- (-1.4,1.1) -- (2.5,-1.1) -- cycle; 
 } \end{center}
 
 
 \item А какую часть составляет такой треугольник?
 
 \begin{center} \tikz{
-	\draw[very thick] (-2.5,-1.1) -- (-2.5,1.1) -- (2.5,1.1) -- (2.5,-1.1) -- cycle;
-	\filldraw[thick,draw=black,fill={rgb:black,1.4;white,8.6}]
-		(2.5,1.1) -- (-2.5,0.5) -- (2.5,-1.1) -- cycle;
+	\draw[very thick] (-2.5,-1.1) -- (-2.5,1.1) -- (2.5,1.1) -- (2.5,-1.1) -- cycle; 
+	\filldraw[thick,draw=black,fill={rgb:black,1.4; white,8.6}]
+		(2.5,1.1) -- (-2.5,0.5) -- (2.5,-1.1) -- cycle; 
 } \end{center}
 
 \item А такой?
 
 \begin{center} \tikz{
-	\draw[very thick] (-2.5,-1.1) -- (-2.5,1.1) -- (2.5,1.1) -- (2.5,-1.1) -- cycle;
-	\filldraw[thick,draw=black,fill={rgb:black,1.4;white,8.6}]
-		(-0.6,-1.1) -- (-2.5,1.1) -- (2.5,-1.1) -- cycle;
+	\draw[very thick] (-2.5,-1.1) -- (-2.5,1.1) -- (2.5,1.1) -- (2.5,-1.1) -- cycle; 
+	\filldraw[thick,draw=black,fill={rgb:black,1.4; white,8.6}]
+		(-0.6,-1.1) -- (-2.5,1.1) -- (2.5,-1.1) -- cycle; 
 } \end{center}
 
 \item Как вы думаете, какую часть (по площади) составляет выделенная область от всего правильного шестиугольника?
 
 \begin{center} \tikz{
-	\filldraw[thick,draw=black,fill={rgb:black,1.4;white,8.6}]
-		(0,0) -- (0: 1.2cm) -- (330: 1.38564cm) -- (300: 1.2cm);
+	\filldraw[thick,draw=black,fill={rgb:black,1.4; white,8.6}]
+		(0,0) -- (0: 1.2cm) -- (330: 1.38564cm) -- (300: 1.2cm); 
 	\draw[very thick] (0: 2.4cm) -- (60: 2.4cm) -- (120: 2.4cm) -- (180: 2.4cm)
-		-- (240: 2.4cm) -- (300: 2.4cm) -- cycle;
-	\draw[thick] (300: 2.4cm) -- (60: 2.4cm) -- (120: 2.4cm) -- cycle;
-	\draw[thick] (0: 2.4cm) -- (180: 2.4cm) -- (240: 2.4cm) -- cycle;
+		-- (240: 2.4cm) -- (300: 2.4cm) -- cycle; 
+	\draw[thick] (300: 2.4cm) -- (60: 2.4cm) -- (120: 2.4cm) -- cycle; 
+	\draw[thick] (0: 2.4cm) -- (180: 2.4cm) -- (240: 2.4cm) -- cycle; 
 } \end{center}
 
 \end{itemize}
@@ -49,33 +49,33 @@
 Последовательность, возникающая в этой задаче, обладает богатыми\linebreak комбинаторными реализациями, и их разнообразие просто изумляет.\linebreak Опишем общую ситуацию: пусть даны две параллельные прямые, на одной отмечено $k$ точек, на другой $n$ точек. 
 
 \def\lenpalet{
-	\filldraw[fill=white,draw=white] (-0.55,-0.3) rectangle (2.4,1.1);
-	\filldraw (0,0.8) node(a){ } circle[radius=0.45mm];
-	\filldraw (0.65,0.8) node(b){ } circle[radius=0.45mm];
-	\filldraw (0,0) node(c){ } circle[radius=0.45mm];
-	\filldraw (0.65,0) node(d){ } circle[radius=0.45mm];
-	\filldraw (1.3,0) node(e){ } circle[radius=0.45mm];
-	\filldraw (1.95,0) node(f){ } circle[radius=0.45mm];
+	\filldraw[fill=white,draw=white] (-0.55,-0.3) rectangle (2.4,1.1); 
+	\filldraw (0,0.8) node(a){ } circle[radius=0.45mm]; 
+	\filldraw (0.65,0.8) node(b){ } circle[radius=0.45mm]; 
+	\filldraw (0,0) node(c){ } circle[radius=0.45mm]; 
+	\filldraw (0.65,0) node(d){ } circle[radius=0.45mm]; 
+	\filldraw (1.3,0) node(e){ } circle[radius=0.45mm]; 
+	\filldraw (1.95,0) node(f){ } circle[radius=0.45mm]; 
 }
 
 \def\dt{\draw[thick]}
 
 \begin{center} \begin{tabular}{c|c}
 	\tikz{
-		\lenpalet;
-		\dt (a)--(b); \dt (c)--(d); \dt (e)--(f);
+		\lenpalet; 
+		\dt (a)--(b);  \dt (c)--(d);  \dt (e)--(f); 
 	} &
 	\tikz{
-		\lenpalet;
-		\dt (a)--(c); \dt (b)--(d); \dt (e)--(f);
+		\lenpalet; 
+		\dt (a)--(c);  \dt (b)--(d);  \dt (e)--(f); 
 	} \\ \hline
 	\tikz{
-		\lenpalet;
-		\dt (a)--(c); \dt (d)--(e); \dt (b)--(f);
+		\lenpalet; 
+		\dt (a)--(c);  \dt (d)--(e);  \dt (b)--(f); 
 	} &
 	\tikz{
-		\lenpalet;
-		\dt (c)--(d); \dt (a)--(e); \dt (b)--(f);
+		\lenpalet; 
+		\dt (c)--(d);  \dt (a)--(e);  \dt (b)--(f); 
 	}
 \end{tabular} \end{center}
 
@@ -103,10 +103,10 @@ $[4,0]$&$[3,1]$&$[2,2]$&$[1,3]$&$[0,4]$ \\
  
 \end{center}
  
-Кроме того, если $n+k$ нечётно, то $[k,n] = 0$, а также $[k,n] = 0$, если $n,k < 0$. Если $n$ или $k$ равно нулю, то $[k,n] = 1$ просто по определению.
+Кроме того, если $n+k$ нечетно, то $[k,n] = 0$, а также $[k,n] = 0$, если $n,k < 0$. Если $n$ или $k$ равно нулю, то $[k,n] = 1$ просто по определению.
 \begin{itemize}
-\item Заполните треугольник выше и найдите в нём закономерности,\linebreak аналогичные закономерностям в треугольнике Паскаля.
+\item Заполните треугольник выше и найдите в нем закономерности,\linebreak аналогичные закономерностям в треугольнике Паскаля.
 \item Выясните, какую последовательность образуют суммы элементов в строках треугольника.
-\item Правда ли, что в каждой строчке числа $[k,n]$ обязательно возрастают при движении от краёв к центру?
+\item Правда ли, что в каждой строчке числа $[k,n]$ обязательно возрастают при движении от краев к центру?
 \item Выясните, как выразить $[n,n]$ через суммы квадратов чисел на диагоналях в треугольнике Паскаля.
 \end{itemize}

@@ -1,4 +1,4 @@
-\task{Вовочка и клетчатая тетрадь}
+﻿\task{Вовочка и клетчатая тетрадь}
 \begin{itemize}
 
 \itA Заметим, что $10^2 + 30^2 = 1000$. То есть, прямоугольный треугольник с катетами $\SI{10}{\text{мм}}$, $\SI{30}{\text{мм}}$ (который легко нарисовать по клеткам) имеет гипотенузу $\sqrt{1000}\,\text{мм}^2$.
@@ -6,11 +6,11 @@
 \begin{center} \tikz{
 \begin{scope}[scale=0.85]
 	\foreach \x in {-2,...,2} {
-		\draw[color=gray] (\x,-2.4) -- (\x, 2.4);
-		\draw[color=gray] (-2.4,\x) -- (2.4, \x);};
-	\draw[very thick] (-2,-2) rectangle (2,2);
+		\draw[color=gray] (\x,-2.4) -- (\x, 2.4); 
+		\draw[color=gray] (-2.4,\x) -- (2.4, \x); }; 
+	\draw[very thick] (-2,-2) rectangle (2,2); 
 	\draw[pattern=north west lines, pattern color=gray, thick]
-		(-1,-2) -- (2,-1) -- (1,2) -- (-2,1) -- cycle;
+		(-1,-2) -- (2,-1) -- (1,2) -- (-2,1) -- cycle; 
 \end{scope}			
 } \end{center}
 
@@ -22,16 +22,16 @@
 
 \begin{center} \tikz{
 \begin{scope}[scale=0.85]
-	\foreach \x in {-2,...,2} {\draw[color=gray] (\x,-2.8) -- (\x, 2.8);};
+	\foreach \x in {-2,...,2} {\draw[color=gray] (\x,-2.8) -- (\x, 2.8); }; 
 	\foreach \x in {-3,...,2} {\draw[color=gray]
-		(-2.3,0.5 cm +\x cm) -- (2.3,0.5 cm + \x cm);};
-	\filldraw (-0.025,-2.5) rectangle (0.025,2.5);
+		(-2.3,0.5 cm +\x cm) -- (2.3,0.5 cm + \x cm); }; 
+	\filldraw (-0.025,-2.5) rectangle (0.025,2.5); 
 	\draw[very thick] (0,-2.5)
 		-- (2,-2.5)
 		-- (0,10/3-2.5) node[circle,fill=black,inner sep = 0.65 mm](){}
 		-- (-1,2.5) -- (0,2.5) -- (-2,2.5)
 		-- (0,5/3-2.5) node[circle,fill=black,inner sep = 0.65 mm](){}
-		-- (1,-2.5) -- cycle;
+		-- (1,-2.5) -- cycle; 
 \end{scope} } \end{center}
 
 \columnbreak
@@ -40,21 +40,21 @@
 \tikz{
 \begin{scope}[scale=0.76]
 	\foreach \x in{-3,...,2} {\draw[color=gray]
-		(-3.3,0.5*\x cm + 0.25 cm) -- (3.3,0.5*\x cm + 0.25 cm);}
+		(-3.3,0.5*\x cm + 0.25 cm) -- (3.3,0.5*\x cm + 0.25 cm); }
 	\foreach \x in{-6,...,6} {\draw[color=gray]
-		(0.5*\x cm, -1.55) -- (0.5*\x cm, 1.55);}
-	\filldraw (-0.018,-1.25) rectangle (0.018,1.25);
+		(0.5*\x cm, -1.55) -- (0.5*\x cm, 1.55); }
+	\filldraw (-0.018,-1.25) rectangle (0.018,1.25); 
 	\foreach \x in {1,...,6} {\draw[very thick]
 		(0.5*\x cm,-1.25)
 		-- (0, 2.5/7 * \x cm - 1.25 cm) node[circle,fill=black,inner sep = 0.5 mm](){}
-		-- (0.5*\x cm - 3.5 cm,1.25);}
-	\draw[very thick] (0,-1.25) -- (3,-1.25);
-	\draw[very thick] (-3,1.25) -- (0,1.25);
+		-- (0.5*\x cm - 3.5 cm,1.25); }
+	\draw[very thick] (0,-1.25) -- (3,-1.25); 
+	\draw[very thick] (-3,1.25) -- (0,1.25); 
 \end{scope} } \end{center}
 
 \end{multicols}
 
 \itC Аналогично пункту B данной задачи мы умеем делить на произвольное количество частей любой отрезок, начало и конец которого — узлы сетки. Также $80 \cdot 25 = 2000$ — поэтому, если мы научимся строить квадрат площадью \SI{2000}{\text{мм}^2}, мы сможем поделить каждую из его сторон на пять частей и получить 25 квадратов нужной нам площади в \SI{80}{\text{мм}^2}.
 
-Наконец, $2000 = 20^2 + 40^2$\scolon далее аналогично пункту A.
+Наконец, $2000 = 20^2 + 40^2$; далее аналогично пункту A.
 \end{itemize}

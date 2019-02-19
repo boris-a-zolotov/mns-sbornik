@@ -1,6 +1,6 @@
-\task{Геометрия и алгебра слов}
+﻿\task{Геометрия и алгебра слов}
 
-Рассмотрим некоторое конечное множество $A = \{a_1,a_2, \ldots, a_m\}$, которое будем называть алфавитом. Для каждого элемента $a\in A$ введём дополнительно символ $a^{-1}$. Множество всх таких символов обозначим за $A^{-1}$. Теперь определим расширенный алфавит $\text{Ҩ} = A\cup A^{-1}$. Тем самым можно рассмотреть набор 
+Рассмотрим некоторое конечное множество $A = \{a_1,a_2, \ldots, a_m\}$, которое будем называть алфавитом. Для каждого элемента $a\in A$ введем дополнительно символ $a^{-1}$. Множество всх таких символов обозначим за $A^{-1}$. Теперь определим расширенный алфавит $\text{Ҩ} = A\cup A^{-1}$. Тем самым можно рассмотреть набор 
 $$\text{Ҩ}^* = \{\varepsilon, a_1, a_2, \ldots, a_1^{-1}, a_2^{-1},\ldots, a_1a_1, a_1a_2, \ldots, a_1 a_1^{-1}, a_1a_2^{-1}, \ldots\}$$ всех слов, которые можно получить из букв алфавита $\text{Ҩ}$, где $\varepsilon$ --- пустое слово длины ноль. На этом наборе определена операция приписывания слов, которую можно рассматривать как функцию $\text{Ҩ}^*\times \text{Ҩ}^* \to \text{Ҩ}^*$. Например, $abaa\cdot ba = abaaba$. Коротко будем записывать $a^n = a\cdot \ldots \cdot a$ ($n$ раз).
 
 Зафиксируем некоторый набор изометрий $X = \{x_1, x_2, \ldots, x_m\}$ (все $x_i$ — элементы $\textrm{Isom}(\text{\bfseries R}^n)$) пространства $\text{\bfseries R}^n$. Мы можем компонировать данные изометрии между собой: $xy:= x \circ y$. Для каждой изометрии $x\in X$ по--определению есть обратное отображение $x^{-1}$, которое тоже будет изометрией. 
@@ -13,7 +13,7 @@ $f_X: \text{Ҩ}^* \longrightarrow \textrm{Isom}(\text{\bfseries R}^n),$
 \hline
 	\begin{minipage}{0.85\textwidth}
 \medskip
-На геометрическом уровне некоторые получающиеся слова будут совпадать. Например, если $x,y$ --- это переносы на векторы $(1,0)$ и $(0,1)$ в $\text{\bfseries R}^2$, то изометрии $xy$ и $yx$ равны. Кроме того, если $z,w$ --- это отражение относительно начала координат и поворот против часовой стрелки на $\text{π}/2$ относительно нуля, то $zx \neq xz$, $z^2 = w^4 = \textrm{id}$ и $y^{-1}wx = \textrm{id}$. Таким образом, некоторые слова в получающемся языке должны интерпретироваться как совпадающие. Будем говорить, что два слова $u,v \in \text{Ҩ}^*$ являются $X$--эквивалентными, если $f_X(u)=f_X(v)$. Через $W_X$ обозначается фактормножество множества $\text{Ҩ}^*$ по получающемуся отношению эквивалентности (такое множество однозначно задаётся каким--нибудь полным набором из попарно неэквивалентных слов, то есть таким набором, что любое слово $v \in \text{Ҩ}^*$ эквивалентно слову из него, но никакие два разных слова из в наборе друг другу не эквивалентны).
+На геометрическом уровне некоторые получающиеся слова будут совпадать. Например, если $x,y$ --- это переносы на векторы $(1,0)$ и $(0,1)$ в $\text{\bfseries R}^2$, то изометрии $xy$ и $yx$ равны. Кроме того, если $z,w$ --- это отражение относительно начала координат и поворот против часовой стрелки на $\text{π}/2$ относительно нуля, то $zx \neq xz$, $z^2 = w^4 = \textrm{id}$ и $y^{-1}wx = \textrm{id}$. Таким образом, некоторые слова в получающемся языке должны интерпретироваться как совпадающие. Будем говорить, что два слова $u,v \in \text{Ҩ}^*$ являются $X$--эквивалентными, если $f_X(u)=f_X(v)$. Через $W_X$ обозначается фактормножество множества $\text{Ҩ}^*$ по получающемуся отношению эквивалентности (такое множество однозначно задается каким--нибудь полным набором из попарно неэквивалентных слов, то есть таким набором, что любое слово $v \in \text{Ҩ}^*$ эквивалентно слову из него, но никакие два разных слова из в наборе друг другу не эквивалентны).
 \begin{enumerate} \setcounter{enumi}{-1}
 \item Докажите, что $X$--эквивалентность является отношением эквивалентности на $\text{Ҩ}^*$.
 \end{enumerate} \smallskip
@@ -70,10 +70,10 @@ $$Fix(\Phi) := \{ \varphi \in \textrm{Isom}(\text{\bfseries R}^n) \mid \varphi(\
 \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=4cm,
                 thick,main node/.style={circle,draw,font=\Large\bfseries}]
 
-  \node[main node] (1) {2};
-  \node[main node] (2) [right of=1] {2};
+  \node[main node] (1) {2}; 
+  \node[main node] (2) [right of=1] {2}; 
   \path
-    (1) edge node[above] {n} (2);
+    (1) edge node[above] {n} (2); 
 \end{tikzpicture}
 \end{center}
 \item Решите аналогичную задачу для графа
@@ -81,13 +81,13 @@ $$Fix(\Phi) := \{ \varphi \in \textrm{Isom}(\text{\bfseries R}^n) \mid \varphi(\
 \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=4cm,
                 thick,main node/.style={circle,draw,font=\Large\bfseries}]
 
-  \node[main node] (1) {2};
-  \node[main node] (2) [right of=1] {2};
-  \node[main node] (3) [right of=2] {2};
+  \node[main node] (1) {2}; 
+  \node[main node] (2) [right of=1] {2}; 
+  \node[main node] (3) [right of=2] {2}; 
   \path
-    (1) edge node[above] {} (2);
+    (1) edge node[above] {} (2); 
   \path
-    (2) edge node[above] {} (3);
+    (2) edge node[above] {} (3); 
 \end{tikzpicture}
 \end{center}
 \item Более общо, решите аналогичную задачу для графа из $n$ вершин, являющегося простой ломаной.
@@ -95,16 +95,16 @@ $$Fix(\Phi) := \{ \varphi \in \textrm{Isom}(\text{\bfseries R}^n) \mid \varphi(\
 \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2cm,
                 thick,main node/.style={circle,draw,font=\Large\bfseries}]
 
-  \node[main node] (1) {2};
-  \node[main node] (2) [right of=1] {2};
-  \node[main node] (3) [right of=2] {2};
-  \node[main node] (4) [right of=3] {2};
+  \node[main node] (1) {2}; 
+  \node[main node] (2) [right of=1] {2}; 
+  \node[main node] (3) [right of=2] {2}; 
+  \node[main node] (4) [right of=3] {2}; 
 \path
-    (1) edge node[above] {} (2);
+    (1) edge node[above] {} (2); 
   \path
-    (2) edge node[above] {} (3);
+    (2) edge node[above] {} (3); 
   \path
-    (3) edge node[above] {} (4);
+    (3) edge node[above] {} (4); 
 \end{tikzpicture}
 \end{center}
 \end{enumerate}
@@ -113,25 +113,25 @@ $$Fix(\Phi) := \{ \varphi \in \textrm{Isom}(\text{\bfseries R}^n) \mid \varphi(\
 \begin{align*}
 Q_\Gamma(x_1, \ldots, x_m) = \sum_{i=1}^m x_i^2 - \sum_{(i,j)\in E} x_i x_j.
 \end{align*}
-Найдите соответствующие квадратичные формы для графов пре-\linebreak дыдущих пунктов и исследуйте их на положительную определённость. Докажите, что если квадратичная форма $Q_\Gamma$ является положительно определённой, то граф $\Gamma$
+Найдите соответствующие квадратичные формы для графов пре-\linebreak дыдущих пунктов и исследуйте их на положительную определенность. Докажите, что если квадратичная форма $Q_\Gamma$ является положительно определенной, то граф $\Gamma$
 \begin{enumerate}
 \item не содержит циклов
 \item не содержит вершин степени $4$ и больше
 \item содержит не более одной вершины степени $3$
 \end{enumerate}
-Что ещё можно сказать про граф $\Gamma$, если соответствуюшая форма положительно определена?
+Что еще можно сказать про граф $\Gamma$, если соответствуюшая форма положительно определена?
 \item Рассмотрите граф ниже и найдите пару $(X,f_X)$, для которой отношения $R$-- и $X$--эквивалентности совпадают.
 \begin{center}
 \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=4cm,
                 thick,main node/.style={circle,draw,font=\Large\bfseries}]
 
-  \node[main node] (1) {2};
-  \node[main node] (2) [right of=1] {2};
-  \node[main node] (3) [right of=2] {2};
+  \node[main node] (1) {2}; 
+  \node[main node] (2) [right of=1] {2}; 
+  \node[main node] (3) [right of=2] {2}; 
   \path
-    (1) edge node[above] {4} (2);
+    (1) edge node[above] {4} (2); 
   \path
-      (2) edge node[above] {} (3);
+      (2) edge node[above] {} (3); 
 \end{tikzpicture}
 \end{center}
 Исследуйте ситуацию, при которой такой граф состоит из $n$ вершин и продолжается вправо ребрами с $d_{i,i+1} = 3$, $i \geq 2$.
