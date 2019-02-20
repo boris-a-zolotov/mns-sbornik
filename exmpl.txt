@@ -1,0 +1,13 @@
+﻿\captionsetup[figure]{labelformat=empty, labelsep=none, width=9cm}
+
+\begin{document}
+
+\begin{figure} \begin{center}
+	\includegraphics[width=8cm]{figures/color/01}
+	%\vspace{1cm}
+	\caption{
+             {\itshape ... Экспериментальный стул с использованием нанотехнологий 
+             (одна из инноваций заключается, например, в том, что у 
+             такого стула ровно 720 ножек) падает с лестницы ...} \medskip \\
+             {Задача 3 <<Современная мебельная фабрика>>, 2018 год, 5 класс.}}
+\end{center} \end{figure}
