@@ -1,0 +1,84 @@
+\usepackage{epic}
+
+\newcount\shogix %
+\newcount\shogiy %
+\newcount\xboard
+\newcount\yboard
+
+\newcommand\Ls{\rotatebox[origin=c]{-90}{\bfseries 香}}
+\newcommand\Lg{\rotatebox[origin=c]{90}{\bfseries 香}}
+\newcommand\Lps{\rotatebox[origin=c]{-90}{\bfseries 杏}}
+\newcommand\Lpg{\rotatebox[origin=c]{90}{\bfseries 杏}}
+\newcommand\Ps{\rotatebox[origin=c]{-90}{\bfseries 歩}}
+\newcommand\Pg{\rotatebox[origin=c]{90}{\bfseries 歩}}
+\newcommand\Pps{\rotatebox[origin=c]{-90}{\bfseries と}}
+\newcommand\Ppg{\rotatebox[origin=c]{90}{\bfseries と}}
+\newcommand\Ns{\rotatebox[origin=c]{-90}{\bfseries 桂}}
+\newcommand\Ng{\rotatebox[origin=c]{90}{\bfseries 桂}}
+\newcommand\Nps{\rotatebox[origin=c]{-90}{\bfseries 圭}}
+\newcommand\Npg{\rotatebox[origin=c]{90}{\bfseries 圭}}
+\newcommand\Ss{\rotatebox[origin=c]{-90}{\bfseries 銀}}
+\newcommand\Sg{\rotatebox[origin=c]{90}{\bfseries 銀}}
+\newcommand\Sps{\rotatebox[origin=c]{-90}{\bfseries 全}}
+\newcommand\Spg{\rotatebox[origin=c]{90}{\bfseries 全}}
+\newcommand\Gs{\rotatebox[origin=c]{-90}{\bfseries 金}}
+\newcommand\Gg{\rotatebox[origin=c]{90}{\bfseries 金}}
+\newcommand\Ks{\rotatebox[origin=c]{-90}{\bfseries 玉}}
+\newcommand\Kg{\rotatebox[origin=c]{90}{\bfseries 王}}
+\newcommand\Rs{\rotatebox[origin=c]{-90}{\bfseries 飛}}
+\newcommand\Rg{\rotatebox[origin=c]{90}{\bfseries 飛}}
+\newcommand\Rps{\rotatebox[origin=c]{-90}{\bfseries 竜}}
+\newcommand\Rpg{\rotatebox[origin=c]{90}{\bfseries 竜}}
+\newcommand\Bs{\rotatebox[origin=c]{-90}{\bfseries 角}}
+\newcommand\Bg{\rotatebox[origin=c]{90}{\bfseries 角}}
+\newcommand\Bps{\rotatebox[origin=c]{-90}{\bfseries 馬}}
+\newcommand\Bpg{\rotatebox[origin=c]{90}{\bfseries 馬}}
+
+\newcommand\shopiece[3]{%
+%  \xboard=880
+  \xboard=1135
+  \yboard=920
+  \shogix=#1
+  \shogiy=#2
+  \advance\shogix by 3
+  \loop
+  \advance\shogix by -1
+  \advance\xboard by -85
+  \ifnum\shogix>0
+  \repeat
+  %
+  \loop
+  \advance\shogiy by -1
+  \advance\yboard by -100
+  \ifnum\shogiy>0
+  \repeat
+  %
+  \advance\xboard by -5
+  \advance\yboard by 5
+  \put(\xboard,\yboard){\large #3}%
+}
+
+
+\newcommand\shodiag[2]{%
+{%\begin{CJK}{UTF8}{min}%
+%\unitlength=.005truecm
+\unitlength=.008truecm
+\begin{picture}(1180,1000)\small
+%draw the board first
+\linethickness{.1mm}
+\put(100,0){\grid(767,900)(85,100)}
+\linethickness{.2mm}%
+\put(100,0){\line(0,1){900}}
+\put(100,0){\line(1,0){765}}
+\put(865,0){\line(0,1){900}}
+\put(100,900){\line(1,0){765}}
+\multiputlist(130,950)(85,0){9,8,7,6,5,4,3,2,1}
+\ifnum#1=1{\multiputlist(920,50)(0,100){\begin{turn}{-90}九\end{turn},\begin{turn}{-90}八\end{turn},\begin{turn}{-90}七\end{turn},
+    \begin{turn}{-90}六\end{turn},\begin{turn}{-90}五\end{turn},\begin{turn}{-90}四\end{turn},\begin{turn}{-90}三\end{turn},
+    \begin{turn}{-90}二\end{turn},\begin{turn}{-90}一\end{turn}}}
+\else{\multiputlist(920,50)(0,100){i,h,g,f,e,d,c,b,a}}
+\fi
+
+%
+#2
+\end{picture}}}
