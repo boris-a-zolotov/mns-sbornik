@@ -4,3 +4,5 @@
 *.pdfsync
 *.toc
 *.gz
+
+other/dopdf*
